@@ -1,0 +1,227 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ek Chhoti Si Sorry, Dii ❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, serif;
+    background: linear-gradient(135deg, #ffe4ec, #fff5f0);
+    color: #754052;
+    text-align: center;
+}
+
+.container {
+    width: 90%;
+    max-width: 750px;
+    margin: auto;
+}
+
+header {
+    padding: 70px 15px 45px;
+}
+
+h1 {
+    font-size: 38px;
+    margin: 20px 0;
+}
+
+header p {
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.heart {
+    font-size: 35px;
+    margin-top: 20px;
+}
+
+section {
+    background: #ffffffd9;
+    padding: 30px 20px;
+    margin: 25px 0;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px #d99aaa30;
+}
+
+h2 {
+    font-size: 27px;
+    margin-bottom: 20px;
+}
+
+.message {
+    font-size: 17px;
+    line-height: 1.9;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 5px solid white;
+}
+
+.upload {
+    margin-top: 20px;
+    padding: 12px;
+    background: #f8d6e1;
+    border-radius: 20px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+input {
+    display: none;
+}
+
+button {
+    background: #d97898;
+    color: white;
+    border: none;
+    padding: 14px 25px;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background: #c45d80;
+}
+
+#surprise {
+    display: none;
+    margin-top: 25px;
+    font-size: 19px;
+    line-height: 1.7;
+}
+
+footer {
+    padding: 30px 10px;
+    font-size: 14px;
+}
+
+@media(max-width: 450px) {
+    h1 { font-size: 30px; }
+    .gallery img { height: 160px; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+    <p>♡ A Little Something For You ♡</p>
+    <h1>Sorry Dii ❤️</h1>
+    <p>
+        This little page is just for you.
+        Made with love and a little sorry. 🥺
+    </p>
+    <div class="heart">🌷 💗 🌷</div>
+</header>
+
+<section>
+    <h2>Ek baat kahun, Dii?</h2>
+
+    <div class="message">
+        srry, srry, srry, srry, srry, srry, srry
+        u mean the world to me.....
+
+        Aage se sach mein koi galti repeat nahi hogi...dekh liyo
+
+        M kvi nhi chahti ki meri wajah se
+        aapko koi preshani ho.
+
+        Bss khush rehna aur apna dhyan rkhna. ❤️
+    </div>
+</section>
+
+<section>
+    <h2>Our Beautiful Memories 📸</h2>
+
+    <p>Some moments I'll always cherish. ❤️</p>
+
+    <label class="upload" for="photos">
+        + Add Our Photos
+    </label>
+
+    <input type="file" id="photos" accept="image/*" multiple>
+
+    <div class="gallery" id="gallery">
+    </div>
+</section>
+
+<section>
+    <h2>One Last Hug? 🫂</h2>
+
+    <p class="message">
+        No matter what, you'll always be special. ❤️
+    </p>
+
+    <button onclick="showLove()">
+        Click Here Dii 💗
+    </button>
+
+    <div id="surprise">
+        🤗 A big hug for you, Dii! ❤️
+        <br>
+        Ab gussa chhodo na!
+        🥺🌷
+    </div>
+</section>
+
+<footer>
+    Made with love, just for my Didi ❤️
+</footer>
+
+</div>
+
+<script>
+const photos = document.getElementById("photos");
+const gallery = document.getElementById("gallery");
+
+photos.addEventListener("change", function() {
+
+    gallery.innerHTML = "";
+
+    Array.from(this.files).forEach(function(file) {
+
+        if (!file.type.startsWith("image/")) return;
+
+        const img = document.createElement("img");
+
+        img.src = URL.createObjectURL(file);
+        img.alt = "Our memory";
+
+        gallery.appendChild(img);
+
+    });
+
+});
+
+function showLove() {
+    document.getElementById("surprise").style.display = "block";
+}
+</script>
+
+</body>
+</html>
